@@ -1,0 +1,533 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*PAGE STLYING*/
+
+:root {
+  --primary-color-400: #828282;
+  --primary-color-100: #cacaca;
+  --primary-color-700: #2c3130;
+  --primary-color-800: #121817;
+  --primary-color-900: #121213;
+  --primaryLighGray: #515151;
+  --secondary-color-400: #63a194;
+  --secondary-color-100: #028ea9;
+  --main-white: #ffffff;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--main-white);
+  background-color: var(--primary-color-700);
+  position: relative;
+}
+
+.largeTitle {
+  color: var(--main-white);
+  font-size: 9rem;
+  font-weight: 700;
+}
+
+.mediumTitle {
+  font-size: 3rem;
+}
+
+.smallTitle {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: var(--primary-color-100);
+  text-transform: uppercase;
+}
+
+.subheading {
+  color: var(--secondary-color-400);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+}
+
+p {
+  line-height: 1.75;
+  color: var(--primary-color-100);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+/* navigation */
+
+.navContainer {
+  width: 100vw;
+  min-height: 70px;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  align-items: center;
+  flex-direction: row;
+  background-color: transparent;
+  /*background-image: linear-gradient(var(--primary-color-700), transparent);*/
+  color: var(--secondary-color-400);
+  justify-content: space-between;
+}
+
+.logoBox {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-left: 50px;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.topNav {
+  width: 100%;
+  height: 100%;
+  margin: 0px 50px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navList {
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  padding: 0px 5px;
+  margin: 0px;
+  justify-content: space-evenly;
+}
+
+.navItem {
+  padding: 2.5px 0px;
+  margin: 0px 15px;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  border-bottom: 1px solid var(--secondary-color-400);
+}
+
+.navLink {
+  text-emphasis: none;
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+}
+
+.navLink:hover,
+.navLink:active,
+.navLink:focus,
+.navLink:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navLink button {
+  height: 100%;
+  width: 100%;
+  padding: 2.5px 10px;
+  background-color: transparent;
+  border: 1px solid var(--secondary-color-400);
+  color: var(--secondary-color-400);
+  box-shadow: none;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.navButton:hover,
+.navButton:active,
+.navButton:visited,
+.navButton:focus {
+  border-bottom: none;
+}
+
+button:hover,
+button:visited {
+  color: var(--main-white);
+  background-color: var(--secondary-color-400);
+}
+
+/* mainPage styling */
+
+.siteContainer {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.pageSection {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  margin: 0;
+  padding: 10%;
+  position: relative;
+  flex-direction: column;
+}
+
+.mainHero {
+  background-image: url("images/black-sand-beach.jpeg");
+  background-position: top center;
+  background-size: cover;
+  align-items: center;
+  height: 160vh;
+  justify-content: space-between;
+  padding: 5% 10%;
+}
+
+.titleBox {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 10px;
+  margin: 15px 0px;
+}
+
+.mainHero .titleBox {
+  align-items: flex-start;
+  text-align: left;
+  margin: 5% 0%;
+  margin-top: 10%;
+  padding: 5% 0%;
+  border-collapse: collapse;
+  row-gap: 0px;
+}
+
+.mainHero .titleBox .lineDecoration {
+  border: 2.5px solid var(--main-white);
+}
+
+.lineDecoration {
+  border: 1px solid var(--primary-color-100);
+  width: 50px;
+  margin: 15px 0px;
+}
+
+.mainHero h1 {
+  margin: 5px 0px;
+  line-height: normal;
+}
+
+.mainHero h2 {
+  margin: 5px 0px;
+  line-height: normal;
+}
+
+.introBox {
+  margin: 0%;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+  max-width: 500px;
+  padding: 10px;
+  text-align: center;
+  /*background-color: rgba(0, 0, 0, 0.4);*/
+}
+
+.sectionPara {
+  padding: 20px;
+}
+
+/* LATEST ARTICLES */
+
+.articlesContainer {
+  margin-top: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 35px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+.articleBox {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--primary-color-400);
+  align-items: flex-end;
+  height: 455px;
+  padding: 10px;
+  box-shadow: 15px 20px 20px var(--primary-color-800);
+  background-position: center;
+  background-size: cover;
+}
+
+.articleBox .titleBox {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  line-height: normal;
+  row-gap: 2.5px;
+}
+
+.articleBox .articleHeading {
+  text-transform: uppercase;
+  letter-spacing: 1.75px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 1px 0px;
+}
+
+.articleBox .articleSubheading {
+  margin: 2.5px 0px;
+  letter-spacing: 2.5px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.articleBox .lineDecoration {
+  border: 1px solid var(--main-white);
+}
+
+.port {
+  background-image: url("images/cargo-ship.jpeg");
+}
+
+.beaches {
+  background-image: url("images/untouched-beaches.jpeg");
+}
+
+.lava {
+  background-image: url("images/endless-lava.jpeg");
+}
+
+/* SUBSCRIBE SECTION */
+
+.subscribeSection {
+  background-color: var(--primary-color-800);
+  align-items: center;
+  justify-content: center;
+}
+
+.contentBox {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 5px;
+  width: 100%;
+}
+
+.newsletterEmail {
+  padding: 10px;
+  margin: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+}
+
+.newsletterEmail input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0px;
+  padding-left: 25px;
+  border: 1px solid var(--primary-color-400);
+  background-color: var(--primary-color-700);
+  color: var(--primary-color-400);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+}
+
+.newsletterEmail .emailSubmitBtn {
+  width: 100%;
+  max-width: 175px;
+  border: 1px solid var(--main-white);
+  color: var(--main-white);
+  padding: 15px 25px;
+  background-color: transparent;
+  text-transform: uppercase;
+  margin: 15px 0px;
+  cursor: pointer;
+}
+
+.emailSubmitBtn:hover,
+.emailSubmitBtn:active,
+.emailSubmitBtn:focus {
+  background-color: var(--main-white);
+  color: var(--primary-color-700);
+}
+
+/* FOOTER */
+
+.pageFooterContainer {
+  padding: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--main-white);
+}
+
+.footerLogoBox {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-left: 50px;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.footerNavContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0px 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  padding: 0px 5px;
+  margin: 0px;
+  justify-content: space-between;
+  letter-spacing: 1.75px;
+  column-gap: 25px;
+}
+
+.footerNav .navItem {
+  margin: 0px 25px;
+}
+
+@media only screen and (max-width: 767px) {
+  .mainHero .titleBox {
+    margin-top: 45%;
+  }
+
+  .titleBox {
+    margin: 5px 0px;
+  }
+
+  .introBox {
+    padding: 5px;
+  }
+
+  .pageSection {
+    padding: 5%;
+  }
+
+  .logoBox {
+    margin-left: 5%;
+  }
+
+  .largeTitle {
+    font-size: 7rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+
+  .topNav {
+    display: none;
+  }
+
+  .articlesContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 25px;
+  }
+
+  .footerLogoBox {
+    margin: auto;
+    margin-bottom: 5%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footerNav {
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  .footerNavContainer {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pageFooterContainer {
+    flex-direction: column;
+  }
+}
